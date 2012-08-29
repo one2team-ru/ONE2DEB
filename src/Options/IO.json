@@ -1,0 +1,10 @@
+{
+    "Storages":
+    {
+        "Primary":
+        {
+            "Driver":"IO.Storage.Mongo",
+            "Database":"Debian"
+        }
+    }
+}
