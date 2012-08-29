@@ -1,0 +1,37 @@
+{
+    "Links":
+    {
+        "/":
+        {
+            "Service": "Project.Frontpage",
+            "Method": "Do"
+        },
+        "/regen":
+        {
+            "Service": "Package.Directory",
+            "Method": "Do"
+        },
+        "/binary/Packages":
+        {
+            "Service": "Package.List",
+            "Method": "Generate",
+            "Call":
+            {
+                "Renderer": "View.Plaintext"
+            }
+        },
+        "/packages":
+        {
+            "Service": "Entity.List",
+            "Method": "Do",
+            "Call":
+            {
+                "Entity": "Package",
+                "Where":
+                {
+                    "Meta.X-Private": null
+                }
+            }
+        }
+    }
+}

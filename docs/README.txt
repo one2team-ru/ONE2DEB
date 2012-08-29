@@ -2,13 +2,13 @@ Welcome to the LeasingPad Release!
 
 RELEASE INFORMATION
 ---------------
-Leasing Pad
-Released on Fri 17, 2012.
+ONE2DEB
+Released on Aug 30, 2012.
 
 SYSTEM REQUIREMENTS
 -------------------
 
-Requires PHP 5.4 or later, Codeine 7.3
+Requires PHP 5.4 or later, Codeine 7.6.3
 
 INSTALLATION
 ------------
@@ -19,7 +19,7 @@ QUESTIONS AND FEEDBACK
 ----------------------
 
 Send your questions by mail:
-mail+nmr@one2team.ru
+mail+deb@one2team.ru
 
 LICENSE
 -------

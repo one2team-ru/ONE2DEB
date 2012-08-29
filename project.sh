@@ -14,3 +14,4 @@ mkdir Drivers Options Assets Public
 настроить build.xml
 включить .gitignore
 создать репо
+запушить

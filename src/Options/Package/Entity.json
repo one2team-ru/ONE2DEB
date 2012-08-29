@@ -1,0 +1,90 @@
+{
+    "Storage": "Primary",
+    "EPP": 20,
+    "Nodes":
+    {
+        "ID":
+        {
+            "Create":
+            {
+                "Service": "Security.UID",
+                "Method": "Get",
+                "Call":
+                {
+                    "Mode": "Secure"
+                }
+            }
+        },
+        "Title":
+        {
+            "Type": "Literal.String",
+            "Widgets":
+            {
+                "Write":
+                {
+                    "Type": "Form.Textfield"
+                }
+            }
+        },
+        "Secure.Key":
+        {
+            "Type": "Literal.String",
+            "Widgets":
+            {
+                "Write":
+                {
+                    "Type": "Form.Password"
+                }
+            }
+        },
+        "File":
+        {
+            "Type": "File.Upload",
+            "Storage": "File",
+            "Scope": "Package",
+            "Naming":
+            {
+                "Service": "Data.Type.File.Upload.Naming.MIME",
+                "Method": "Get"
+            },
+            "Widgets":
+            {
+                "Write":
+                {
+                    "Type": "Form.File"
+                }
+            }
+        },
+        "Meta":
+        {
+            "Create":
+            {
+                "Service": "Package.Meta",
+                "Method": "Read"
+            }
+        },
+        "Name":
+        {
+            "Create":
+            {
+                "Service": "Package.Name",
+                "Method": "Read"
+            }
+        }
+    },
+    "Hooks":
+    {
+        "afterCreatePost":
+        {
+            "Redirect":
+            {
+                "Service": "System.Interface.Web",
+                "Method": "Redirect",
+                "Call":
+                {
+                    "Location": "/package/$Data.ID"
+                }
+            }
+        }
+    }
+}

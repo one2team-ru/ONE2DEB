@@ -1,0 +1,61 @@
+{
+    "Regex":
+    {
+        "Show packages":
+        {
+            "Match": "@/package/(.+)@",
+            "Service": "Entity.Show.Static",
+            "Method": "Do",
+            "Call":
+            {
+                "Entity": "Package",
+                "Where": {
+                    "ID": "$1",
+                    "Meta.X-Private": null
+                }
+            }
+        },
+        "Private List":
+        {
+            "Match": "@/(.+)/binary/Packages@",
+            "Service": "Package.List",
+            "Method": "Generate",
+            "Call":
+            {
+                "Key": "$1",
+                "Renderer": "View.Plaintext"
+            }
+        },
+        "Download":
+        {
+            "Match": "@/download/(.+)@",
+            "Service": "Package.Download",
+            "Method": "Do",
+            "Call":
+            {
+                "Renderer": "View.File",
+                "Where":
+                {
+                    "Name": "$1",
+                    "Meta.X-Private": null
+                }
+            }
+        },
+        "Download private":
+        {
+            "Match": "@/download/(.+)/(.+)$@",
+            "Weight": 50,
+            "Service": "Package.Download",
+            "Method": "Do",
+            "Call":
+            {
+                "Renderer": "View.File",
+                "Where":
+                {
+                    "Name": "$1",
+                    "Meta.X-Private": "$2"
+                }
+            }
+        }
+    }
+}

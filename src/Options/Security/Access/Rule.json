@@ -1,0 +1,81 @@
+{
+    "Weight": 0,
+    "Decision": false,
+    "Rules":
+    {
+        "Главная доступна всем":
+        {
+            "Decision": true,
+            "Weight": 75,
+            "Run":
+            {
+                "Service": "Project.Frontpage",
+                "Method": "Do"
+            }
+        },
+        "Страницы ошибок доступны всем":
+        {
+            "Decision": true,
+            "Weight": 200,
+            "Run":
+            {
+                "Service":"Error.Page"
+            }
+        },
+        "Список пакетов доступен всем":
+        {
+            "Decision": true,
+            "Weight": 75,
+            "Run":
+            {
+                "Service": "Entity.List",
+                "Method": "Do",
+                "Call":
+                {
+                    "Entity": "Package"
+                }
+            }
+        },
+        "Просмотр пакета доступен всем":
+        {
+            "Decision": true,
+            "Weight": 75,
+            "Run":
+            {
+                "Service": "Entity.Show.Static",
+                "Method": "Do",
+                "Call":
+                {
+                    "Entity": "Package"
+                }
+            }
+        },
+        "Скачивание пакета доступно всем":
+        {
+            "Decision": true,
+            "Weight": 75,
+            "Run":
+            {
+                "Service": "Package.Download",
+                "Method": "Do"
+            }
+        },
+        "ЦУП":
+        {
+            "Decision": true,
+            "Weight": 75,
+            "Run":
+            {
+                "Service": "Control.Panel",
+                "Method": "Do",
+                "Session":
+                {
+                    "User":
+                    {
+                        "Group": "Staff"
+                    }
+                }
+            }
+        }
+    }
+}

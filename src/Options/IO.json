@@ -5,6 +5,15 @@
         {
             "Driver":"IO.Storage.Mongo",
             "Database":"Debian"
+        },
+        "File":
+        {
+            "Driver": "IO.Storage.Directory",
+            "Directory": "Data"
+        },
+        "Developer":
+        {
+            "Driver": "IO.Null"
         }
     }
 }
