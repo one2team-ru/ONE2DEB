@@ -43,7 +43,7 @@
         },
         "Download private":
         {
-            "Match": "@/download/(.+)/(.+)$@",
+            "Match": "@/(.+)/download/(.+)$@",
             "Weight": 50,
             "Service": "Package.Download",
             "Method": "Do",
