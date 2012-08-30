@@ -26,6 +26,11 @@
             if (!$Decision)
                 continue;
 
+            if (isset($Element['Meta']['X-Private']))
+                $Private = $Element['Meta']['X-Private'].'/';
+            else
+                $Private = '';
+
             $Description = $Element['Meta']['Description'];
             unset($Element['Meta']['Description']);
 
@@ -39,7 +44,7 @@
             foreach ($Element['Meta'] as $Key => $Value)
                 $Package.= $Key.': '.$Value.PHP_EOL;
 
-            $Package.= 'Filename: download/'.$Element['Name'].PHP_EOL;
+            $Package.= 'Filename: download/'.$Private.$Element['Name'].PHP_EOL;
             $Output.= htmlspecialchars_decode($Package.'Description: '.$Description.PHP_EOL).PHP_EOL;
         }
 
