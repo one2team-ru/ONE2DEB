@@ -34,6 +34,7 @@
                 description="${description}"
                 depends="codeine-beta (>=7.4.5), nginx-full, redis-server"
                 homepage="${homepage}"
+                private="ieg5xuHe"
                 provides="${phing.project.name}"
                 filename="${package}/DEBIAN/control"
                 />
