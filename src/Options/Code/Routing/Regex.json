@@ -53,7 +53,7 @@
                 "Where":
                 {
                     "Name": "$2",
-                    "Meta.X-Private": "$1"
+                    "Key": "$1"
                 }
             }
         }
