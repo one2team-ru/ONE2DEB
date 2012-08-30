@@ -50,11 +50,12 @@
             "Call":
             {
                 "Renderer": "View.File",
+
                 "Where":
                 {
-                    "Name": "$2",
-                    "Key": "$1"
-                }
+                    "Name": "$2"
+                },
+                "Key": "$1"
             }
         }
     }
