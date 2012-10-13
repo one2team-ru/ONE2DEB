@@ -32,7 +32,7 @@
                 version="${release}"
                 maintainer="${maintainer}"
                 description="${description}"
-                depends="codeine-beta (>=7.7), nginx, gzip, xzip, lzma, bzip2"
+                depends="codeine-beta (>=7.7), nginx, gzip, xz-lzma, bzip2"
                 homepage="${homepage}"
                 provides="${phing.project.name}"
                 filename="${package}/DEBIAN/control"
