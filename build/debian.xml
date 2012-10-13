@@ -33,7 +33,6 @@
                 maintainer="${maintainer}"
                 description="${description}"
                 depends="codeine-beta (>=7.7), nginx, gzip, xzip, lzma, bzip2"
-                recommends="mongodb"
                 homepage="${homepage}"
                 provides="${phing.project.name}"
                 filename="${package}/DEBIAN/control"
