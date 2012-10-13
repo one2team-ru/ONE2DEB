@@ -10,7 +10,7 @@
             {
                 "Entity": "Package",
                 "Where": {
-                    "ID": "$1",
+                    "Meta.Package": "$1",
                     "Meta.X-Private": null
                 }
             }
