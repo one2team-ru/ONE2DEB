@@ -23,7 +23,7 @@
                 else
                     $Value = nl2br($Line);
 
-                $NewMeta[trim($Key)].= trim($Value);
+                $NewMeta[trim($Key)].= trim($Value).'<br/>';
             }
         }
 
