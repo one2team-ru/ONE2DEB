@@ -28,7 +28,7 @@
         },
         "Private List with compression":
         {
-            "Match": "@/(.+)/binary/Packages(.*)@",
+            "Match": "@/(.+)/binary/Packages(.+)@",
             "Service": "Package.List",
             "Weight": 40,
             "Method": "Generate",
