@@ -17,7 +17,7 @@
         },
         "Private List":
         {
-            "Match": "@/(.+)/binary/Packages$@",
+            "Match": "@^/(.+)/binary/Packages$@",
             "Service": "Package.List",
             "Method": "Generate",
             "Call":
