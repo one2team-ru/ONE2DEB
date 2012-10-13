@@ -13,6 +13,26 @@
                 "Method": "Do"
             }
         },
+        "Регенерация доступна всем":
+        {
+            "Decision": true,
+            "Weight": 75,
+            "Run":
+            {
+                "Service": "Package.Directory",
+                "Method": "Do"
+            }
+        },
+        "Packages доступен всем":
+        {
+            "Decision": true,
+            "Weight": 75,
+            "Run":
+            {
+                "Service": "Package.List",
+                "Method": "Generate"
+            }
+        },
         "Страницы ошибок доступны всем":
         {
             "Decision": true,

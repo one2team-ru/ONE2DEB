@@ -1,0 +1,28 @@
+{
+    "Hooks":
+    {
+        "afterBuild":
+        {
+            "GZ":
+            {
+                "Service": "Package.List.GZ",
+                "Method": "Process"
+            },
+            "LZMA":
+            {
+                "Service": "Package.List.LZMA",
+                "Method": "Process"
+            },
+            "XZ":
+            {
+                "Service": "Package.List.XZ",
+                "Method": "Process"
+            },
+            "BZ2":
+            {
+                "Service": "Package.List.BZ2",
+                "Method": "Process"
+            }
+        }
+    }
+}

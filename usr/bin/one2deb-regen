@@ -1,0 +1,2 @@
+#/bin/bash
+/var/www/deb/cli.php --Service=Package.Directory --Method=Do

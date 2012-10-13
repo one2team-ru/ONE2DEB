@@ -70,6 +70,10 @@
                 "Service": "Package.Name",
                 "Method": "Read"
             }
+        },
+        "Modified":
+        {
+
         }
     },
     "Hooks":

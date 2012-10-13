@@ -7,9 +7,8 @@
      * @version 7.x
      */
 
-    self::setFn('Do', function ($Call)
+    self::setFn('Process', function ($Call)
     {
-        // TODO Realize "Do" function
-
+        shell_exec('xz -c '.$Call['PackagesFilename'].' > '.$Call['PackagesFilename'].'.xz');
         return $Call;
     });

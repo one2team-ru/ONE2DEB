@@ -27,6 +27,7 @@
             {
 
                 $Data['File'] = $File;
+                $Data['Modified'] = filemtime(Root.'/Data/Package/'.$File);
 
                 F::Run('Entity', 'Create',
                     [

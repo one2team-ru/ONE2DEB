@@ -4,6 +4,7 @@
         "Primary":
         {
             "Driver":"IO.Storage.Mongo",
+            "Server": "localhost",
             "Database":"Debian"
         },
         "File":
