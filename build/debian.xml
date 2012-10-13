@@ -32,9 +32,8 @@
                 version="${release}"
                 maintainer="${maintainer}"
                 description="${description}"
-                depends="codeine-beta (>=7.6.4), nginx-full, redis-server"
+                depends="codeine-beta (>=7.7), nginx, mongodb-10gen, gzip, xz, lzma, bzip2"
                 homepage="${homepage}"
-                private="ieg5xuHe"
                 provides="${phing.project.name}"
                 filename="${package}/DEBIAN/control"
                 />
