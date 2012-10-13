@@ -15,17 +15,6 @@
                 }
             }
         },
-        "Private List":
-        {
-            "Match": "@^/(.+)/binary/Packages$@",
-            "Service": "Package.List",
-            "Method": "Generate",
-            "Call":
-            {
-                "Key": "$1",
-                "Renderer": "View.Plaintext"
-            }
-        },
         "Private List with compression":
         {
             "Match": "@/(.+)/binary/Packages(.+)@",
@@ -39,6 +28,18 @@
                 "Renderer": "View.Plaintext"
             }
         },
+        "Private List":
+        {
+            "Match": "@^/(.+)/binary/Packages$@",
+            "Service": "Package.List",
+            "Method": "Generate",
+            "Call":
+            {
+                "Key": "$1",
+                "Renderer": "View.Plaintext"
+            }
+        },
+
         "Download":
         {
             "Match": "@/download/(.+)@",
