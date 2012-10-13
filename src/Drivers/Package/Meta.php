@@ -21,11 +21,13 @@
                 if (preg_match('@^(\S*)\:(.*)$@SsUu', $Line, $Pockets))
                     list(,$Key, $Value) = $Pockets;
                 else
-                    $Value = nl2br($Line);
+                    $Value = $Line;
 
-                $NewMeta[trim($Key)].= trim($Value).'<br/>';
+                $NewMeta[trim($Key)].= trim($Value);
             }
         }
+
+        $NewMeta['Description'] = nl2br($NewMeta['Description']);
 
         return $NewMeta;
     });
