@@ -55,7 +55,8 @@
                     $Element['Meta']['SHA1'] = sha1_file(Root.'/Data/Package/'.$Element['File']);
 
                     foreach ($Element['Meta'] as $Key => $Value)
-                        $Package.= $Key.': '.$Value.PHP_EOL;
+                        if (!empty($Value))
+                            $Package.= $Key.': '.$Value.PHP_EOL;
 
                     $Package.= 'Filename: download/'.$Element['Name'].PHP_EOL;
                     $Output.= htmlspecialchars_decode($Package.'Description: '.$Description.PHP_EOL).PHP_EOL;
