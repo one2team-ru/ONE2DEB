@@ -26,6 +26,19 @@
                 "Renderer": "View.Plaintext"
             }
         },
+        "Private List":
+        {
+            "Match": "@/(.+)/binary/Packages(.*)@",
+            "Service": "Package.List",
+            "Weight": 40,
+            "Method": "Generate",
+            "Call":
+            {
+                "Key": "$1",
+                "Format": "$2",
+                "Renderer": "View.Plaintext"
+            }
+        },
         "Download":
         {
             "Match": "@/download/(.+)@",
