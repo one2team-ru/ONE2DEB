@@ -18,7 +18,7 @@
         {
             foreach ($Meta as $Line)
             {
-                if (preg_match('@^(.*)\:(.*)$@SsUu', $Line, $Pockets))
+                if (preg_match('@^(\S*)\:(.*)$@SsUu', $Line, $Pockets))
                     list(,$Key, $Value) = $Pockets;
                 else
                     $Value = nl2br($Line);
