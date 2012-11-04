@@ -12,33 +12,60 @@
     {
         $Files = explode(PHP_EOL, trim(shell_exec('ls '.Root.'/Data/Package')));
 
-        arsort($Files);
-
-        F::Run('Entity', 'Delete', [
-            'Entity' => 'Package'
-        ]);
-
-        foreach ($Files as $File)
+        if (!empty($Files[0]))
         {
-            $Meta = F::Run('Package.Meta', 'Read', ['Data' => ['File' => $File]]);
+            arsort($Files);
 
-            if (!isset($Packages[$Meta['Package']][$Meta['Architecture']])
-                or strnatcmp($Packages[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
+            F::Run('Entity', 'Delete', [
+                'Entity' => 'Package'
+            ]);
+
+            foreach ($Files as $File)
             {
-                $Data['File'] = $File;
-                $Data['Modified'] = filemtime(Root.'/Data/Package/'.$File);
+                $Meta = F::Run('Package.Meta', 'Read', ['Data' => ['File' => $File]]);
 
-                F::Run('Entity', 'Create',
-                    [
-                        'Entity' => 'Package',
-                        'Data' => $Data
-                    ]);
+                if (!isset($Packages[$Meta['Package']][$Meta['Architecture']])
+                    or strnatcmp($Packages[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])>0)
+                {
+                    $Data['File'] = $File;
+                    $Data['Modified'] = filemtime(Root.'/Data/Package/'.$File);
 
-                $Packages[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
+                    $Data = F::Run('Entity', 'Create',
+                        [
+                            'Entity' => 'Package',
+                            'Data' => $Data
+                        ])['Data'];
+
+                    F::Log($Data['Meta']['Package'].' version '.$Data['Meta']['Version'].' for '.$Data['Meta']['Architecture'].' architecture created', LOG_INFO);
+
+                    $Packages[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
+                }
+                else
+                {
+                    if (unlink (Root.'/Data/Package/'.$File))
+                        F::Log($File.' removed', LOG_INFO);
+                    else
+                        F::Log($File.' not removed', LOG_ERR);
+                }
+
+                F::Log($File.' processed', LOG_INFO);
             }
-            else
-                unlink (Root.'/Data/Package/'.$File);
+
+            $Call['Output']['Content'][] =
+                [
+                    'Type' => 'Block',
+                    'Class' => 'alert alert-success',
+                    'Value' => '<l>Package.Directory:Packages.Updated</l>'
+                ];
         }
+        else
+            $Call['Output']['Content'][] =
+                [
+                    'Type' => 'Block',
+                    'Class' => 'alert alert-warning',
+                    'Value' => '<l>Package.Directory:Packages.No</l>'
+                ];
+
 
         return $Call;
     });

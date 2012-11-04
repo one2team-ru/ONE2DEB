@@ -23,7 +23,13 @@
                 else
                     $Value = $Line;
 
-                $NewMeta[trim($Key)].= trim($Value);
+                $Key = trim($Key);
+
+                $Value = htmlentities($Value);
+                if (isset($NewMeta[$Key]))
+                    $NewMeta[$Key].= PHP_EOL.trim($Value);
+                else
+                    $NewMeta[$Key]= trim($Value);
             }
         }
         $NewMeta['Description'] = nl2br($NewMeta['Description']);

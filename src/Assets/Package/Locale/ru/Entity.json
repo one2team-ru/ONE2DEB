@@ -6,7 +6,9 @@
         "Section": "Секция",
         "Sections": {
             "devel": "Разработка",
-            "web": "Web"
+            "web": "Web",
+            "php": "PHP",
+            "database": "Базы данных"
         },
         "Priority": "Приоритет",
         "Priorities": {
