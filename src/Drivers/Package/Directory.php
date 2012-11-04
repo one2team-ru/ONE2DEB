@@ -23,9 +23,8 @@
             $Meta = F::Run('Package.Meta', 'Read', ['Data' => ['File' => $File]]);
 
             if (!isset($Packages[$Meta['Package']][$Meta['Architecture']])
-                or ($Packages[$Meta['Package']][$Meta['Architecture']] <= $Meta['Version']))
+                or strnatcmp($Packages[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
             {
-
                 $Data['File'] = $File;
                 $Data['Modified'] = filemtime(Root.'/Data/Package/'.$File);
 

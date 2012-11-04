@@ -26,7 +26,6 @@
                 $NewMeta[trim($Key)].= trim($Value);
             }
         }
-
         $NewMeta['Description'] = nl2br($NewMeta['Description']);
 
         return $NewMeta;

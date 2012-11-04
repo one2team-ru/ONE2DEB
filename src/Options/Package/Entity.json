@@ -5,16 +5,20 @@
     {
         "ID":
         {
-            "Create":
+            "Hooks":
             {
-                "Service": "Security.UID",
-                "Method": "Get",
-                "Call":
+                "beforeEntityCreate":
                 {
-                    "Mode": "Secure"
+                    "Service": "Security.UID",
+                    "Method": "Get",
+                    "Call":
+                    {
+                        "Mode": "Secure"
+                    }
                 }
             }
         },
+        "File":{},
         "Title":
         {
             "Type": "Literal.String",
@@ -37,38 +41,27 @@
                 }
             }
         },
-        "File":
-        {
-            "Type": "File.Upload",
-            "Storage": "File",
-            "Scope": "Package",
-            "Naming":
-            {
-                "Service": "Data.Type.File.Upload.Naming.MIME",
-                "Method": "Get"
-            },
-            "Widgets":
-            {
-                "Write":
-                {
-                    "Type": "Form.File"
-                }
-            }
-        },
         "Meta":
         {
-            "Create":
+            "Hooks":
             {
-                "Service": "Package.Meta",
-                "Method": "Read"
+                "beforeEntityCreate":
+                {
+                    "Service": "Package.Meta",
+                    "Method": "Read"
+                }
             }
+
         },
         "Name":
         {
-            "Create":
+            "Hooks":
             {
-                "Service": "Package.Name",
-                "Method": "Read"
+                "beforeEntityCreate":
+                {
+                    "Service": "Package.Name",
+                    "Method": "Read"
+                }
             }
         },
         "Modified":
