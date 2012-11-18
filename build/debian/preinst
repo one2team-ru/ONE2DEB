@@ -4,14 +4,14 @@ set -e
 
 case "$1" in
     install)
-        rm -rf /var/www/medgreat/
-        mkdir -p /var/www/medgreat/Public/cache
-        mkdir /var/www/medgreat/Public/cache/css
-        mkdir /var/www/medgreat/Public/cache/js
-        mkdir /var/www/medgreat/Public/uploads
-        mkdir /var/www/medgreat/Public/cache/thumbs
-        chmod -R 777 /var/www/medgreat/Public/cache
-        chown -R www-data:www-data /var/www/medgreat
+        rm -rf /var/www/one2deb/
+        mkdir -p /var/www/one2deb/Public/cache
+        mkdir /var/www/one2deb/Public/cache/css
+        mkdir /var/www/one2deb/Public/cache/js
+        mkdir /var/www/one2deb/Public/uploads
+        mkdir /var/www/one2deb/Public/cache/thumbs
+        chmod -R 777 /var/www/one2deb/Public/cache
+        chown -R www-data:www-data /var/www/one2deb
 
         service nginx restart
         service php5-fpm restart
