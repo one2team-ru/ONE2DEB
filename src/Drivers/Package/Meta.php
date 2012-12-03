@@ -7,7 +7,7 @@
      * @version 7.x
      */
 
-    self::setFn('Read', function ($Call)
+    setFn('Read', function ($Call)
     {
         exec('dpkg --info '.(isset($Call['Data']['File']['tmp_name'])?
             $Call['Data']['File']['tmp_name']:

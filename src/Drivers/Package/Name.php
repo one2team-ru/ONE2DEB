@@ -7,7 +7,7 @@
      * @version 7.x
      */
 
-    self::setFn('Read', function ($Call)
+    setFn('Read', function ($Call)
     {
         return $Call['Data']['Meta']['Package'].'_'.$Call['Data']['Meta']['Version'].'_'.$Call['Data']['Meta']['Architecture'].'.deb';
     });

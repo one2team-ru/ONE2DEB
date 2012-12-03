@@ -8,7 +8,7 @@
      */
 
 
-    self::setFn('Do', function ($Call)
+    setFn('Do', function ($Call)
     {
         $Files = explode(PHP_EOL, trim(shell_exec('ls '.Root.'/Data/Package')));
 

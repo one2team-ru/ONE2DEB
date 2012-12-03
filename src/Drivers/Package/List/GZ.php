@@ -7,7 +7,7 @@
      * @version 7.x
      */
 
-    self::setFn('Process', function ($Call)
+    setFn('Process', function ($Call)
     {
         shell_exec('gzip -c '.$Call['PackagesFilename'].' > '.$Call['PackagesFilename'].'.gz');
         return $Call;

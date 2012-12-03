@@ -8,7 +8,7 @@
      */
 
 
-    self::setFn('Do', function ($Call)
+    setFn('Do', function ($Call)
     {
 
         $Call['Data'] = F::Run('Entity', 'Read', $Call,
