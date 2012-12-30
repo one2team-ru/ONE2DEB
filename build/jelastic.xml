@@ -1,0 +1,39 @@
+<project name="jelastic" default="make">
+    <!-- Stubs -->
+    <property name="description" value=""/>
+    <property name="homepage" value=""/>
+    <property name="maintainer" value=""/>
+
+    <!-- Source directories -->
+    <property name="source-code" value="src"/>
+    <property name="source-docs" value="docs"/>
+    <property name="source-etc" value="etc"/>
+
+    <!-- Build directories -->
+    <property name="distribution" value="distribution"/>
+
+    <property name="destination-etc" value="etc"/>
+    <property name="destination-source" value="var/www" />
+    <property name="destination-documents" value="usr/share/doc"/>
+
+    <target name="folders">
+        <mkdir dir="jelastic" />
+        <mkdir dir="jelastic/${package}/webroot" />
+    </target>
+
+    <target name="source">
+        <copy todir="jelastic/${package}/webroot">
+            <fileset dir="${source-code}">
+                <include name="*/**"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="make" depends="jelastic.folders, jelastic.source">
+        <tar destFile="${distribution}/${package}.jelastic.tar.gz" compression="gzip">
+            <fileset dir="jelastic/${package}">
+                <include name="*"/>
+            </fileset>
+        </tar>
+    </target>
+</project>

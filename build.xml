@@ -14,6 +14,7 @@
     <import file="build/phpdoc.xml"/>
 
     <import file="build/debian.xml"/>
+    <import file="build/jelastic.xml"/>
     <import file="build/tarball.xml"/>
 
     <property name="description" value="Репозиторий Debian"/>
@@ -33,7 +34,7 @@
     <target name="phase4" depends="phase3, phploc.analyze"></target>
 
     <!-- Packaging -->
-    <target name="phase5" depends="phase4, tarball.make, debian.make"></target>
+    <target name="phase5" depends="phase4, jelastic.make, debian.make"></target>
 
 
     <target name="final" depends="phase5"></target>
