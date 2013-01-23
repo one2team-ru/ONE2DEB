@@ -18,6 +18,7 @@
 
         if (!isset($Call['Data']['Meta']['X-Private']) || $Call['Key'] == $Call['Data']['Meta']['X-Private'])
         {
+            $Call['Renderer'] = 'View.Download';
             $Call['Output']['Title'] = $Call['Data']['Name'];
             $Call['Output']['File'] = Root.'/Data/Package/'.$Call['Data']['File'];
         }
