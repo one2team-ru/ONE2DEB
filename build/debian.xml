@@ -87,7 +87,7 @@
         </echo>
     </target>
 
-    <target name="make" depends="folders, control, source, etc, usr, version, docs">
+    <target name="make" depends="folders, control, source,usr, etc, version, docs">
         <exec command="dpkg --build '${package}' ${distribution}/ " logoutput="true"/>
     </target>
 </project>
