@@ -3,7 +3,7 @@
     {
         "Show packages":
         {
-            "Match": "@/package/(.+)@",
+            "Match": "@/package/(.+)/(.+)@",
             "Service": "Entity.Show.Static",
             "Method": "Do",
             "Call":
@@ -11,6 +11,7 @@
                 "Entity": "Package",
                 "Where": {
                     "Meta.Package": "$1",
+                    "Meta.Architecture": "$2",
                     "Meta.X-Private": null
                 }
             }
