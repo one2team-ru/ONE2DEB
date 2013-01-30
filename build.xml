@@ -21,6 +21,8 @@
     <property name="maintainer" value="Johnny Funt"/>
     <property name="destination-source" value="/var/www/"/>
 
+    <property name="depends" value="codeine-beta (>=7.7.8), php5-mongo" />
+
     <target name="phase1" depends="properties, folders"></target>
 
     <!-- Source code checks -->
