@@ -19,7 +19,7 @@
     <property name="description" value="Репозиторий Debian"/>
     <property name="homepage" value="http://one2team.ru/project/ONE2DEB"/>
     <property name="maintainer" value="Johnny Funt"/>
-    <property name="destination-source" value="/var/www/"/>
+    <property name="destination-source" value="/var/www/one2deb"/>
 
     <property name="depends" value="codeine-beta (>=7.7.8), php5-mongo" />
 
@@ -35,7 +35,7 @@
     <target name="phase4" depends="phase3, phploc.analyze"></target>
 
     <!-- Packaging -->
-    <target name="phase5" depends="phase4, debian.make"></target>
+    <target name="phase5" depends="phase4, make"></target>
 
 
     <target name="final" depends="phase5"></target>
