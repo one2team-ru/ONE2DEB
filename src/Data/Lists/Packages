@@ -1,0 +1,49 @@
+Package: libmagickwand3
+Source: imagemagick
+Version: 8:6.6.0.4-3+squeeze3
+Architecture: amd64
+Maintainer: ImageMagick Packaging Team <pkg-gmagick-im-team@lists.alioth.debian.org>
+Installed-Size: 1204
+Depends: libbz2-1.0, libc6 (>= 2.3), libfontconfig1 (>= 2.8.0), libfreetype6 (>= 2.2.1), libglib2.0-0 (>= 2.12.0), libgomp1 (>= 4.2.1), libice6 (>= 1:1.0.0), libjpeg62 (>= 6b1), liblcms1 (>= 1.15-1), liblqr-1-0 (>= 0.1.0), libltdl7 (>= 2.2.6b), libmagickcore3 (>= 8:6.6.0.4), libsm6, libtiff4, libx11-6, libxext6, libxt6, zlib1g (>= 1:1.1.4)
+Section: libs
+Priority: optional
+Homepage: http://www.imagemagick.org/
+Size: 417862
+MD5: 87e97c6e6feb4b9d0ecfa6ba49c18935
+SHA1: bd39da88ba3615accecd5e5ad97fac9e9065fdc8
+Filename: download/libmagickwand3_8:6.6.0.4-3+squeeze3_amd64.deb
+Description: image manipulation libraryThe MagickWand API is the recommended interface between the C programminglanguage and the ImageMagick image processing libraries. Unlike theMagickCore C API, MagickWand uses only a few opaque types. Accessors areavailable to set or get important wand properties..This package contains the C libraries needed to run executables that makeuse of MagickWand.
+
+Package: libprotobuf6
+Source: protobuf
+Version: 2.3.0-4ubuntu2
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 1008
+Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.3), zlib1g (>= 1:1.1.4)
+Section: devel
+Priority: extra
+Homepage: http://code.google.com/p/protobuf/
+Original-Maintainer: Iustin Pop <iustin@debian.org>
+Size: 343898
+MD5: e3914767555d01ef1698ba667ab60c7d
+SHA1: 091e16f35ca366aadb2e017d0a292001fd4ca77b
+Filename: download/libprotobuf6_2.3.0-4ubuntu2_amd64.deb
+Description: protocol buffers C++ libraryProtocol buffers are a flexible, efficient, automated mechanism forserializing structured data - similar to XML, but smaller, faster, andsimpler. You define how you want your data to be structured once, then you canuse special generated source code to easily write and read your structureddata to and from a variety of data streams and using a variety of languages.You can even update your data structure without breaking deployed programsthat are compiled against the "old" format..Google uses Protocol Buffers for almost all of its internal RPC protocols andfile formats..This package contains the runtime library needed for C++ applications.
+
+Package: libprotobuf-lite6
+Source: protobuf
+Version: 2.3.0-4
+Architecture: amd64
+Maintainer: Iustin Pop <iustin@debian.org>
+Installed-Size: 212
+Depends: libc6 (>= 2.2.5), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.3), zlib1g (>= 1:1.1.4)
+Section: devel
+Priority: extra
+Homepage: http://code.google.com/p/protobuf/
+Size: 75072
+MD5: 546f4d6451bf6a3abca73f2586530ba3
+SHA1: 3ffaacdbb360dc59a92c2ab9140dcbb7971cb6e2
+Filename: download/libprotobuf-lite6_2.3.0-4_amd64.deb
+Description: protocol buffers C++ library (lite version)Protocol buffers are a flexible, efficient, automated mechanism forserializing structured data - similar to XML, but smaller, faster, andsimpler. You define how you want your data to be structured once, then you canuse special generated source code to easily write and read your structureddata to and from a variety of data streams and using a variety of languages.You can even update your data structure without breaking deployed programsthat are compiled against the "old" format..Google uses Protocol Buffers for almost all of its internal RPC protocols andfile formats..This package contains the runtime library needed for C++ applications whosemessage definitions have the "lite runtime" optimization setting.
+
