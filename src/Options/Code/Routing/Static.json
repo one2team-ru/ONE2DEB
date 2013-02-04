@@ -65,6 +65,10 @@
                 "Where":
                 {
                     "Meta.X-Private": null
+                },
+                "Sort":
+                {
+                    "Meta.Package": true
                 }
             }
         }

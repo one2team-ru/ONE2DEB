@@ -1,6 +1,26 @@
 {
     "Regex":
     {
+        "List packages":
+        {
+            "Match": "@/packages/page(.+)@",
+            "Weight": 50,
+            "Service": "Entity.List",
+            "Method": "Do",
+            "Call":
+            {
+                "Entity": "Package",
+                "Page": "$1",
+                "Sort":
+                {
+                    "Meta.Package": true
+                },
+                "Where":
+                {
+                    "Meta.X-Private": null
+                }
+            }
+        },
         "Show packages":
         {
             "Match": "@/package/(.+)/(.+)@",

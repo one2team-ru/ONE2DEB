@@ -2,13 +2,16 @@
     "Meta": {
         "Source": "Источник",
         "Maintainer": "Мейнтейнер",
-        "Depends": "Зависимости",
+        "Depends": "Зависит от",
+        "Breaks": "Ломает",
         "Section": "Секция",
         "Sections": {
             "devel": "Разработка",
             "web": "Web",
             "php": "PHP",
-            "database": "Базы данных"
+            "database": "Базы данных",
+            "admin": "Администрирование",
+            "libs": "Библиотеки"
         },
         "Priority": "Приоритет",
         "Priorities": {
