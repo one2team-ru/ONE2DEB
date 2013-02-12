@@ -3,7 +3,7 @@
     {
         "List packages":
         {
-            "Match": "@/packages/page(.+)@",
+            "Match": "/packages/page(.+)",
             "Weight": 50,
             "Service": "Entity.List",
             "Method": "Do",
@@ -23,7 +23,7 @@
         },
         "Show packages":
         {
-            "Match": "@/package/(.+)/(.+)@",
+            "Match": "/package/(.+)/(.+)",
             "Service": "Entity.Show.Static",
             "Method": "Do",
             "Call":
@@ -38,7 +38,7 @@
         },
         "Private List with compressed":
         {
-            "Match": "@/(.+)/binary/Packages(.+)@",
+            "Match": "/(.+)/binary/Packages(.+)",
             "Service": "Package.List",
             "Weight": 40,
             "Method": "Generate",
@@ -51,7 +51,7 @@
         },
         "Private List":
         {
-            "Match": "@^/(.+)/binary/Packages$@",
+            "Match": "^/(.+)/binary/Packages$",
             "Service": "Package.List",
             "Method": "Generate",
             "Call":
@@ -63,7 +63,7 @@
 
         "Download":
         {
-            "Match": "@/download/(.+)@",
+            "Match": "/download/(.+)",
             "Service": "Package.Download",
             "Method": "Do",
             "Call":
@@ -78,7 +78,7 @@
         },
         "Download private":
         {
-            "Match": "@^/(.+)/download/(.+)$@",
+            "Match": "^/(.+)/download/(.+)$",
             "Weight": 50,
             "Service": "Package.Download",
             "Method": "Do",
