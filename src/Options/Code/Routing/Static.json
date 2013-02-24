@@ -15,6 +15,15 @@
                 "Renderer": "View.Plaintext"
             }
         },
+         "/binary/Release":
+        {
+            "Service": "Package.Release",
+            "Method": "Do",
+            "Call":
+            {
+                "Renderer": "View.Plaintext"
+            }
+        },
         "/binary/Packages.gz":
         {
             "Service": "Package.List",

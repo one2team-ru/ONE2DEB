@@ -33,6 +33,16 @@
                 "Method": "Generate"
             }
         },
+        "Release доступен всем":
+        {
+            "Decision": true,
+            "Weight": 75,
+            "Run":
+            {
+                "Service": "Package.Release",
+                "Method": "Do"
+            }
+        },
         "Страницы ошибок доступны всем":
         {
             "Decision": true,
