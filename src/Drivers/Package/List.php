@@ -71,9 +71,12 @@
         else
         {
             if (isset($Call['Format']))
+            {
                 $Call['PackagesFilename'].= $Call['Format'];
-
-            $Output = file_get_contents($Call['PackagesFilename']);
+                readfile($Call['PackagesFilename']);
+            }
+            else
+                $Output = file_get_contents($Call['PackagesFilename']);
         }
 
         $Call['Output']['Content'][] = $Output;
