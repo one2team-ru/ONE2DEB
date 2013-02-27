@@ -9,6 +9,8 @@
 
     setFn('Process', function ($Call)
     {
-        shell_exec('bzip2 -c '.$Call['PackagesFilename'].' > '.$Call['PackagesFilename'].'.bz2');
+        $bz2 = bzopen($Call['PackagesFilename'].'.bz2', "w");
+        bzwrite($bz2, file_get_contents($Call['PackagesFilename']));
+        bzclose($bz2);
         return $Call;
     });
