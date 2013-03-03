@@ -18,7 +18,6 @@
                 }
             }
         },
-        "File":{},
         "Title":
         {
             "Type": "Literal.String",
