@@ -17,7 +17,8 @@
             arsort($Files);
 
             F::Run('Entity', 'Delete', [
-                'Entity' => 'Package'
+                'Entity' => 'Package',
+                'Where' => []
             ]);
 
             foreach ($Files as $File)

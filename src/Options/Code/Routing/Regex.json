@@ -11,13 +11,19 @@
             {
                 "Entity": "Package",
                 "Page": "$1",
+                "Where":
+                {
+                    "Meta":
+                    {
+                        "X-Private":
+                        {
+                            "$exists": false
+                        }
+                    }
+                },
                 "Sort":
                 {
                     "Meta.Package": true
-                },
-                "Where":
-                {
-                    "Meta.X-Private": null
                 }
             }
         },

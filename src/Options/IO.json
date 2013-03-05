@@ -4,7 +4,7 @@
         "Primary":
         {
             "Driver":"IO.Storage.Mongo",
-            "Server": "mongo.db",
+            "Server": "/tmp/mongodb-27017.sock",
             "Database":"Debian"
         },
         "File":
@@ -14,7 +14,7 @@
         },
         "Developer":
         {
-            "Driver": "IO.Null"
+            "Driver": "IO.Log.Syslog"
         }
     }
 }
