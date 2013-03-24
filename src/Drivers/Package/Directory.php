@@ -34,6 +34,7 @@
                     $Data = F::Run('Entity', 'Create',
                         [
                             'Entity' => 'Package',
+                            'One' => true,
                             'Data' => $Data
                         ])['Data'];
 
