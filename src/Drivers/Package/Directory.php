@@ -17,28 +17,18 @@
             arsort($Files);
 
             F::Run('Entity', 'Delete', [
-                'Entity' => 'Package',
-                'Where' => []
+                'Entity' => 'Package'
             ]);
 
-            foreach ($Files as $File)
+            foreach ($Files as $IX => $File)
             {
                 $Meta = F::Run('Package.Meta', 'Read', ['Data' => ['File' => $File]]);
 
                 if (!isset($Packages[$Meta['Package']][$Meta['Architecture']])
                     or strnatcmp($Packages[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
                 {
-                    $Data['File'] = $File;
-                    $Data['Modified'] = filemtime(Root.'/Data/Package/'.$File);
-
-                    $Data = F::Run('Entity', 'Create',
-                        [
-                            'Entity' => 'Package',
-                            'One' => true,
-                            'Data' => $Data
-                        ])['Data'];
-
-                    F::Log($Data['Meta']['Package'].' version '.$Data['Meta']['Version'].' for '.$Data['Meta']['Architecture'].' architecture created', LOG_INFO);
+                    $Data[$IX]['File'] = $File;
+                    $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
 
                     $Packages[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
                 }
@@ -52,6 +42,12 @@
 
                 F::Log($File.' processed', LOG_INFO);
             }
+
+            F::Run('Entity', 'Create',
+                [
+                    'Entity' => 'Package',
+                    'Data' => $Data
+                ]);
 
             $Call['Output']['Content'][] =
                 [
