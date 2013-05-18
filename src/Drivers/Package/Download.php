@@ -16,7 +16,7 @@
                          'Entity' => 'Package'
                     ))[0];
 
-        if (!isset($Call['Data']['Meta']['X-Private']) || $Call['Key'] == $Call['Data']['Meta']['X-Private'])
+        if ($Call['Data']['Meta']['X-Private'] == 'No' || $Call['Key'] == $Call['Data']['Meta']['X-Private'])
         {
             header('X-Accel-Redirect: /Package/'.$Call['Data']['File']);
         }
