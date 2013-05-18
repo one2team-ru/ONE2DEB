@@ -16,7 +16,7 @@
 
         $Output = '';
 
-        if (isset($Call['Key']))
+        if (isset($Call['Key']) && $Call['Key'] != 'No')
             $Call['PackagesFilename'] = Root.'/Data/Lists/'.$Call['Key'];
         else
             $Call['PackagesFilename'] = Root.'/Data/Lists/Packages';
@@ -31,7 +31,7 @@
             {
                 $Decision = true;
 
-                if (isset($Element['Meta']['X-Private']) && $Call['Key'] != $Element['Meta']['X-Private'])
+                if ($Element['Meta']['X-Private'] != 'No' && $Call['Key'] != $Element['Meta']['X-Private'])
                     $Decision = false;
 
                 if (!$Decision)
