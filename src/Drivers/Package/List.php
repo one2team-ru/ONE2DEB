@@ -16,7 +16,7 @@
 
         $Output = '';
 
-        if (isset($Call['Key']) && $Call['Key'] != 'No')
+        if (isset($Call['Key']))
             $Call['PackagesFilename'] = Root.'/Data/Lists/'.$Call['Key'];
         else
             $Call['PackagesFilename'] = Root.'/Data/Lists/Packages';
