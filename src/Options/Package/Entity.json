@@ -33,17 +33,6 @@
                 }
             }
         },
-        "Secure.Key":
-        {
-            "Type": "Literal.String",
-            "Widgets":
-            {
-                "Write":
-                {
-                    "Type": "Form.Password"
-                }
-            }
-        },
         "Meta":
         {
             "Hooks":

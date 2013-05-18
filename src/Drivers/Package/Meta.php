@@ -32,7 +32,11 @@
                     $NewMeta[$Key]= trim($Value);
             }
         }
+
         $NewMeta['Description'] = nl2br($NewMeta['Description']);
+
+        if (empty($NewMeta['X-Private']))
+            $NewMeta['X-Private'] = 'No';
 
         return $NewMeta;
     });

@@ -73,13 +73,7 @@
                 "Entity": "Package",
                 "Where":
                 {
-                    "Meta":
-                    {
-                        "X-Private":
-                        {
-                            "$exists": false
-                        }
-                    }
+                    "Meta.X-Private": "No"
                 },
                 "Sort":
                 {
