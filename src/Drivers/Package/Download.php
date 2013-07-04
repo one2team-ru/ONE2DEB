@@ -12,9 +12,10 @@
     {
 
         $Call['Data'] = F::Run('Entity', 'Read', $Call,
-                    array(
-                         'Entity' => 'Package'
-                    ))[0];
+                    [
+                        'Entity' => 'Package',
+                        'One' => true
+                    ]);
 
         if ($Call['Data']['Meta']['X-Private'] == 'No' || $Call['Key'] == $Call['Data']['Meta']['X-Private'])
         {

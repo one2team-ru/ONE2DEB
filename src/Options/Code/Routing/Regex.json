@@ -121,7 +121,7 @@
                 "Renderer": "View.File",
                 "Where":
                 {
-                    "Name": "$1",
+                    "ID": "$1",
                     "Meta.X-Private": "No"
                 }
             }
@@ -135,10 +135,7 @@
             "Call":
             {
                 "Renderer": "View.File",
-                "Where":
-                {
-                    "Name": "$2"
-                },
+                "Where": "$2",
                 "Key": "$1"
             }
         }

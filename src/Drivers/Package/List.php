@@ -58,7 +58,7 @@
                         if (!empty($Value))
                             $Package.= $Key.': '.$Value.PHP_EOL;
 
-                    $Package.= 'Filename: download/'.$Element['Name'].PHP_EOL;
+                    $Package.= 'Filename: download/'.$Element['ID'].PHP_EOL;
                     $Output.= htmlspecialchars_decode($Package.'Description: '.$Description.PHP_EOL).PHP_EOL;
                 }
             }
