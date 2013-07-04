@@ -26,7 +26,8 @@
             "non-free\/web": "Несвободное \/ Веб",
             "python": "Python",
             "x11": "X11",
-            "utils": "Утилиты"
+            "utils": "Утилиты",
+            "httpd": "Веб-сервер"
         },
         "Priority": "Приоритет",
         "Priorities": {
