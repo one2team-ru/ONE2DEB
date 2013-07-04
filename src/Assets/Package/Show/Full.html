@@ -1,5 +1,11 @@
+<subtitle><l>Package.Entity:Meta.Sections.<k>Meta.Section</k></l></subtitle>
+<breadcrumb href="/packages/section/<k>Meta.Section</k>"><l>Package.Entity:Meta.Sections.<k>Meta.Section</k></l></breadcrumb>
+
 <subtitle><k>Meta.Package</k> <k>Meta.Version</k></subtitle>
+<breadcrumb href="/package/<k>Meta.Package</k>/<k>Meta.Architecture</k>"><k>Meta.Package</k> <k>Meta.Version</k></breadcrumb>
+
 <description><k>Meta.Description</k></description>
+
 <h2 class="page-header"><k>Meta.Package</k> (<k>Meta.Version</k>)</h2>
 <div class="row-fluid">
     <div class="span9">
@@ -9,10 +15,21 @@
 
 <h4><l>Package.Entity:Install</l></h4>
 <pre class="console">
-apt-get install <k>Meta.Package</k>
+# apt-get install <k>Meta.Package</k>
 </pre>
-    <h4><l>Package.Entity:Download</l></h4>
-        <a class="btn btn-large btn-success" href="/download/<k>Name</k>">.deb</a>
+<h4><l>Package.Entity:Or</l></h4>
+<pre class="console">
+# aptitude install <k>Meta.Package</k>
+</pre>
+
+<h4><l>Package.Entity:Or</l></h4>
+<pre class="console">
+wget <call>Host</call>/download/<k>Name</k>
+# dpkg -i <k>Name</k>
+</pre>
+
+    <a class="spaced btn btn-large btn-success" href="/download/<k>Name</k>"><l>Package.Entity:Download</l> <k>Name</k></a>
+
     </div>
 
     <div class="span3">
@@ -83,7 +100,7 @@ apt-get install <k>Meta.Package</k>
 
         <block>
             <h4><l>Package.Entity:Meta.Section</l></h4>
-            <l>Package.Entity:Meta.Sections.<k>Meta.Section</k></l>
+            <a href="/packages/section/<k>Meta.Section</k>"><l>Package.Entity:Meta.Sections.<k>Meta.Section</k></l></a>
         </block>
 
         <block>

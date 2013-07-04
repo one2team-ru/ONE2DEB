@@ -21,6 +21,56 @@
                 }
             }
         },
+        "List packages from section":
+        {
+            "Match": "^/packages/section/(.+)$",
+            "Weight": 50,
+            "Service": "Entity.List",
+            "Method": "Do",
+            "Call":
+            {
+                "Entity": "Package",
+                "Custom Templates":
+                {
+                    "List": "Section"
+                },
+                "Section": "$1",
+                "Where":
+                {
+                    "Meta.X-Private": "No",
+                    "Meta.Section": "$1"
+                },
+                "Sort":
+                {
+                    "Meta.Package": true
+                }
+            }
+        },
+        "List packages from section, pages":
+        {
+            "Match": "^/packages/section/(.+)/page(.+)$",
+            "Weight": 50,
+            "Service": "Entity.List",
+            "Method": "Do",
+            "Call":
+            {
+                "Entity": "Package",
+                "Custom Templates":
+                {
+                    "List": "Section"
+                },
+                "Page": "$2",
+                "Where":
+                {
+                    "Meta.X-Private": "No",
+                    "Meta.Section": "$1"
+                },
+                "Sort":
+                {
+                    "Meta.Package": true
+                }
+            }
+        },
         "Show packages":
         {
             "Match": "/package/(.+)/(.+)",
