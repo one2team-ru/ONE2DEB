@@ -1,0 +1,15 @@
+Origin: 
+Label: ONE2DEB
+Suite: stable
+Codename: squeeze
+Architectures: amd64
+Components: all
+
+MD5Sum:
+ ee0dc2ee7c2577a4dbd5b6396a0dd4fb 3642 binary/Packages
+
+SHA1:
+ 7e4a18972243b635d1fe58a6554ff6bf324e179c 3642 binary/Packages
+
+SHA256:
+ a4956f35da43a1dea79b51008b2bfbb06a22cc5d1310db9cacc1c2c376206d09 3642 binary/Packages
