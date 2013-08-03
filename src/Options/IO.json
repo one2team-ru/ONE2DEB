@@ -14,7 +14,7 @@
         },
         "Developer":
         {
-            "Driver": "IO.Log.Echo"
+            "Driver": "IO.Log.Syslog"
         }
     }
 }

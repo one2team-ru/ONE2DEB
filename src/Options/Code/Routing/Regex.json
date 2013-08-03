@@ -1,6 +1,22 @@
 {
     "Regex":
     {
+        "List sections":
+        {
+            "Match": "/sections",
+            "Weight": 50,
+            "Service": "Entity.Catalog",
+            "Method": "Do",
+            "Call":
+            {
+                "Entity": "Package",
+                "Key": "Meta.Section",
+                "Where":
+                {
+                    "Meta.X-Private": "No"
+                }
+            }
+        },
         "List packages":
         {
             "Match": "/packages/page(.+)",

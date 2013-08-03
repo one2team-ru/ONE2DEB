@@ -66,6 +66,20 @@
                 }
             }
         },
+        "Каталог пакетов доступен всем":
+        {
+            "Decision": true,
+            "Weight": 75,
+            "Run":
+            {
+                "Service": "Entity.Catalog",
+                "Method": "Do",
+                "Call":
+                {
+                    "Entity": "Package"
+                }
+            }
+        },
         "Просмотр пакета доступен всем":
         {
             "Decision": true,

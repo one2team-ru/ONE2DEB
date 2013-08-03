@@ -1,26 +1,43 @@
 <subtitle><call>Project.Title</call></subtitle>
 <breadcrumb href="/"><call>Project.Title</call></breadcrumb>
+<css>Project</css>
+<link href='http://fonts.googleapis.com/css?family=Roboto:500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-<div class="container">
-
-    <div class="navbar">
-        <div class="navbar-inner">
-            <a class="brand" href="/"><call>Project.Title</call></a>
-            <ul class="nav">
-                <li>
-                    <a href="/packages"><l>Package.Entity:Packages</l></a>
-                </li>
-            </ul>
+<div id="wrap">
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="/"><call>RHost</call></a>
+                <ul class="nav">
+                    <li>
+                        <a href="/packages"><l>Package.Entity:Packages</l>
+                        <sup>
+                            <fn>
+                                <Service>Entity</Service>
+                                <Method>Count</Method>
+                                <Call>
+                                    <Entity>Package</Entity>
+                                </Call>
+                            </fn>
+                        </sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/sections">Секции</a>
+                    </li>
+                </ul>
+            </div>
+            <breadcrumbs/>
         </div>
-        <breadcrumbs/>
+
+        <div class="content">
+            <place>Content</place>
+        </div>
+        <div class="footer">
+            <div><call>RHost</call></div>
+            <div>Работает на <a href="http://one2team.ru/project/ONE2DEB"><call>Project.Title</call></a> (<a href="http://codeine-framework.ru">Codeine</a>).
+
+        </div>
     </div>
 
-
-    <div id="content" role="main" class="container-fluid well">
-        <place>Content</place>
-
-        <ul class="nav nav-pills">
-            <li><a href="http://one2team.ru">Сайт ONE2TEAM</a></li>
-        </ul>
-    </div>
 </div>
