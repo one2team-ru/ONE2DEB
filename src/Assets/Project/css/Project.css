@@ -66,3 +66,14 @@ pre.console
     padding: 12px;
     width: auto !important;
 }
+
+td.active, th.active
+{
+    background-color: #841618 !important;
+    color: #ffffff !important;
+}
+
+td.active a, th.active a
+{
+    color: #ffffff;
+}
