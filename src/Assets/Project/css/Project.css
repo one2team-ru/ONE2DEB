@@ -64,5 +64,5 @@ body
 pre.console
 {
     padding: 12px;
-    width: auto;
+    width: auto !important;
 }
