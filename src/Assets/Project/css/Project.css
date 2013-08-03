@@ -61,7 +61,7 @@ body
     font-weight: bold;
 }
 
-.console
+pre.console
 {
     padding: 12px;
     width: auto;
