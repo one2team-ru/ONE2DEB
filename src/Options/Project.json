@@ -2,6 +2,7 @@
     "Title": "ONE2DEB",
     "Hosts":
     {
-        "Production": "deb.one2team.ru"
+        "Production": "deb.one2team.ru",
+        "Development": "one2deb.local"
     }
 }
