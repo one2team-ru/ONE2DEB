@@ -27,7 +27,16 @@
             "python": "Python",
             "x11": "X11",
             "utils": "Утилиты",
-            "httpd": "Веб-сервер"
+            "httpd": "Веб-сервер",
+            "contrib\/otherosfs": "Иные FS",
+            "java": "Java",
+            "non-free\/utils": "Несвободные утилиты",
+            "non-free\/net": "Несвободное сетевое ПО",
+            "contrib\/libs": "Несвободные библиотеки",
+            "localization": "Локализация",
+            "vcs": "Системы управления версиями",
+            "main\/web": "Веб",
+            "contrib\/utils": "Несвободные утилиты"
         },
         "Priority": "Приоритет",
         "Priorities": {

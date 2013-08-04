@@ -1,9 +1,0 @@
-{
-    "Storages":
-    {
-        "Developer":
-        {
-            "Driver": "IO.Null"
-        }
-    }
-}
