@@ -12,7 +12,11 @@
             "Method": "Generate",
             "Call":
             {
-                "Renderer": "View.Plaintext"
+                "Renderer":
+                {
+                    "Service": "View.Plaintext",
+                    "Method": "Render"
+                }
             }
         },
          "/binary/Release":
@@ -21,47 +25,11 @@
             "Method": "Do",
             "Call":
             {
-                "Renderer": "View.Plaintext"
-            }
-        },
-        "/binary/Packages.gz":
-        {
-            "Service": "Package.List",
-            "Method": "Generate",
-            "Call":
-            {
-                "Format": ".gz",
-                "Renderer": "View.Plaintext"
-            }
-        },
-        "/binary/Packages.lzma":
-        {
-            "Service": "Package.List",
-            "Method": "Generate",
-            "Call":
-            {
-                "Format": ".lzma",
-                "Renderer": "View.Plaintext"
-            }
-        },
-        "/binary/Packages.xz":
-        {
-            "Service": "Package.List",
-            "Method": "Generate",
-            "Call":
-            {
-                "Format": ".xz",
-                "Renderer": "View.Plaintext"
-            }
-        },
-        "/binary/Packages.bz2":
-        {
-            "Service": "Package.List",
-            "Method": "Generate",
-            "Call":
-            {
-                "Format": ".bz2",
-                "Renderer": "View.Plaintext"
+                "Renderer":
+                {
+                    "Service": "View.Plaintext",
+                    "Method": "Render"
+                }
             }
         },
         "/packages":

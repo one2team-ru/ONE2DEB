@@ -14,12 +14,12 @@
 
         $Elements = F::Run('Entity', 'Read', ['Entity' => 'Package', 'Where' => ['Meta.X-Private' => $Call['Key']]]);
 
-        $Output = '';
-
         $Elements = F::Sort($Elements, 'Meta.Package');
 
         foreach ($Elements as $Element)
         {
+            $Block = '';
+
             if (!empty($Element['Meta']['Package']))
             {
                 $Package = 'Package: '.$Element['Meta']['Package'].PHP_EOL;
@@ -37,11 +37,11 @@
                         $Package.= $Key.': '.$Value.PHP_EOL;
 
                 $Package.= 'Filename: download/'.$Element['File'].PHP_EOL;
-                $Output.= htmlspecialchars_decode($Package.'Description: '.$Description.PHP_EOL).PHP_EOL;
+                $Block.= htmlspecialchars_decode($Package.'Description: '.$Description.PHP_EOL).PHP_EOL;
             }
         }
 
-        $Call['Output']['Content'][] = $Output;
+        $Call['Output']['Content'][] = $Block;
 
         return $Call;
     });
