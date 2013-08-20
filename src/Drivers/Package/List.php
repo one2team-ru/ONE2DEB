@@ -9,74 +9,34 @@
 
     setFn('Generate', function ($Call)
     {
-        $Elements = F::Run('Entity', 'Read',
-                    array(
-                         'Entity' => 'Package'
-                    ));
+        if (!isset($Call['Key']))
+            $Call['Key'] = 'No';
+
+        $Elements = F::Run('Entity', 'Read', ['Entity' => 'Package', 'Where' => ['Meta.X-Private' => $Call['Key']]]);
 
         $Output = '';
 
-        if (isset($Call['Key']))
-            $Call['PackagesFilename'] = Root.'/Data/Lists/'.$Call['Key'];
-        else
-            $Call['PackagesFilename'] = Root.'/Data/Lists/Packages';
-
-        $Mtimes = array_map(function($Element){return $Element['Modified'];}, $Elements);
-
-        $Mtime = filemtime($Call['PackagesFilename']);
-
-        if (($Mtime < max($Mtimes)) or ($Mtime == false))
+        foreach ($Elements as $Element)
         {
-            foreach ($Elements as $Element)
+            if (!empty($Element['Meta']['Package']))
             {
-                $Decision = true;
+                $Package = 'Package: '.$Element['Meta']['Package'].PHP_EOL;
+                unset($Element['Meta']['Package']);
 
-                if ($Element['Meta']['X-Private'] != 'No' && $Call['Key'] != $Element['Meta']['X-Private'])
-                    $Decision = false;
+                $Description = $Element['Meta']['Description'];
+                unset($Element['Meta']['Description']);
 
-                if (!$Decision)
-                    continue;
-                /*
-                            if (isset($Element['Meta']['X-Private']))
-                                $Private = $Element['Meta']['X-Private'].'/';
-                            else
-                                $Private = '';*/
+                $Element['Meta']['Size'] = filesize(Root.'/Data/Package/'.$Element['File']);
+                $Element['Meta']['MD5'] = md5_file(Root.'/Data/Package/'.$Element['File']);
+                $Element['Meta']['SHA1'] = sha1_file(Root.'/Data/Package/'.$Element['File']);
 
-                if (!empty($Element['Meta']['Package']))
-                {
-                    $Description = $Element['Meta']['Description'];
-                    unset($Element['Meta']['Description']);
+                foreach ($Element['Meta'] as $Key => $Value)
+                    if (!empty($Value))
+                        $Package.= $Key.': '.$Value.PHP_EOL;
 
-                    $Package = 'Package: '.$Element['Meta']['Package'].PHP_EOL;
-                    unset($Element['Meta']['Package']);
-
-                    $Element['Meta']['Size'] = filesize(Root.'/Data/Package/'.$Element['File']);
-                    $Element['Meta']['MD5'] = md5_file(Root.'/Data/Package/'.$Element['File']);
-                    $Element['Meta']['SHA1'] = sha1_file(Root.'/Data/Package/'.$Element['File']);
-
-                    foreach ($Element['Meta'] as $Key => $Value)
-                        if (!empty($Value))
-                            $Package.= $Key.': '.$Value.PHP_EOL;
-
-                    $Package.= 'Filename: download/'.$Element['File'].PHP_EOL;
-                    $Output.= htmlspecialchars_decode($Package.'Description: '.$Description.PHP_EOL).PHP_EOL;
-                }
+                $Package.= 'Filename: download/'.$Element['File'].PHP_EOL;
+                $Output.= htmlspecialchars_decode($Package.'Description: '.$Description.PHP_EOL).PHP_EOL;
             }
-
-            file_put_contents($Call['PackagesFilename'], $Output);
-
-            $Call = F::Hook('afterBuild', $Call);
-            
-        }
-        else
-        {
-            if (isset($Call['Format']))
-            {
-                $Call['PackagesFilename'].= $Call['Format'];
-                readfile($Call['PackagesFilename']);
-            }
-            else
-                $Output = file_get_contents($Call['PackagesFilename']);
         }
 
         $Call['Output']['Content'][] = $Output;
