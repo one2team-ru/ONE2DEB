@@ -102,23 +102,6 @@
                 }
             }
         },
-        "Private List with compressed":
-        {
-            "Match": "/(.+)/binary/Packages(.+)",
-            "Service": "Package.List",
-            "Weight": 40,
-            "Method": "Generate",
-            "Call":
-            {
-                "Key": "$1",
-                "Format": "$2",
-                "Renderer":
-                {
-                    "Service": "View.Plaintext",
-                    "Method": "Render"
-                }
-            }
-        },
         "Private List":
         {
             "Match": "^/(.+)/binary/Packages$",
