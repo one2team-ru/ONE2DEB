@@ -22,8 +22,11 @@
             {
                 $Meta = F::Run('Package.Meta', 'Read', ['Data' => ['File' => $File]]);
 
-                {
-                    if(strnatcmp($Versions[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
+                    if (
+                        isset($Versions[$Meta['Package']][$Meta['Architecture']])
+                        &&
+                        strnatcmp($Versions[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0
+                        )
                     {
                         $Data[$IX]['File'] = $File;
                         $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
@@ -49,7 +52,6 @@
                                 'Type' => 'Block',
                                 'Value' => $File.' processed'
                             ];
-                }
             }
 
             F::Run('Entity', 'Create',
