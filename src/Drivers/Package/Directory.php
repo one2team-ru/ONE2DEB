@@ -27,20 +27,28 @@
                 {
                     $Data[$IX]['File'] = $File;
                     $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
-
                     $Packages[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
-
-
                 }
                 else
                 {
                     if (unlink (Root.'/Data/Package/'.$File))
-                        $Call['Output']['Content'][] = $File.' removed'.PHP_EOL;
+                    {
+                        $Call['Output']['Content'][] = [
+                            'Type' => 'Block',
+                            'Value' => $File.' removed'
+                        ];
+                    }
                     else
-                        $Call['Output']['Content'][] = $File.' not removed'.PHP_EOL;
+                        $Call['Output']['Content'][] = [
+                            'Type' => 'Block',
+                            'Value' => $File.' not removed'
+                        ];
                 }
 
-                $Call['Output']['Content'][] =  $File.' processed'.PHP_EOL;
+                $Call['Output']['Content'][] = [
+                            'Type' => 'Block',
+                            'Value' => $File.' processed'
+                        ];
             }
 
             F::Run('Entity', 'Create',
@@ -49,10 +57,16 @@
                     'Data' => $Data
                 ]);
 
-            $Call['Output']['Content'][] = '<l>Package.Directory:Packages.Updated</l>'.PHP_EOL;
+            $Call['Output']['Content'][] = [
+                'Type' => 'Block',
+                'Value' => '<l>Package.Directory:Packages.Updated</l>'
+            ];
         }
         else
-            $Call['Output']['Content'][] = '<l>Package.Directory:Packages.No</l>'.PHP_EOL;
+            $Call['Output']['Content'][] = [
+                'Type' => 'Block',
+                'Value' => '<l>Package.Directory:Packages.No</l>'
+            ];
 
 
         return $Call;
