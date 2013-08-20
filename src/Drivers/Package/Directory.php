@@ -22,7 +22,6 @@
             {
                 $Meta = F::Run('Package.Meta', 'Read', ['Data' => ['File' => $File]]);
 
-                if (isset($Versions[$Meta['Package']][$Meta['Architecture']]))
                 {
                     if(strnatcmp($Versions[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
                     {
