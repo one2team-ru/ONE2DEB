@@ -16,6 +16,8 @@
 
         $Output = '';
 
+        $Elements = F::Sort($Elements, 'Meta.Package');
+
         foreach ($Elements as $Element)
         {
             if (!empty($Element['Meta']['Package']))
