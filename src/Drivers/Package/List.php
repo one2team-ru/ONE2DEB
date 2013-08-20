@@ -14,7 +14,7 @@
 
         $Elements = F::Run('Entity', 'Read', ['Entity' => 'Package', 'Where' => ['Meta.X-Private' => $Call['Key']]]);
 
-        $Elements = F::Sort($Elements, 'Meta.Package');
+        $Elements = F::Sort($Elements, 'Meta.Package', SORT_ASC);
 
         foreach ($Elements as $Element)
         {
@@ -32,6 +32,7 @@
                 $Element['Meta']['MD5'] = md5_file(Root.'/Data/Package/'.$Element['File']);
                 $Element['Meta']['SHA1'] = sha1_file(Root.'/Data/Package/'.$Element['File']);
 
+                unset($Element['Meta']['X-Private']);
                 foreach ($Element['Meta'] as $Key => $Value)
                     if (!empty($Value))
                         $Package.= $Key.': '.$Value.PHP_EOL;
