@@ -14,7 +14,7 @@
 
         if (!empty($Files[0]))
         {
-            arsort($Files);
+            asort($Files);
 
             F::Run('Entity', 'Delete', ['Entity' => 'Package']);
 
