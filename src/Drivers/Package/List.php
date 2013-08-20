@@ -37,11 +37,13 @@
                         $Package.= $Key.': '.$Value.PHP_EOL;
 
                 $Package.= 'Filename: download/'.$Element['File'].PHP_EOL;
+
                 $Block.= htmlspecialchars_decode($Package.'Description: '.$Description.PHP_EOL).PHP_EOL;
+
+                $Call['Output']['Content'][] = $Block;
             }
         }
 
-        $Call['Output']['Content'][] = $Block;
 
         return $Call;
     });
