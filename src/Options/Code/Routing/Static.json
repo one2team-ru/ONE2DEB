@@ -1,11 +1,6 @@
 {
     "Links":
     {
-        "/regen":
-        {
-            "Service": "Package.Directory",
-            "Method": "Do"
-        },
         "/binary/Packages":
         {
             "Service": "Package.List",
