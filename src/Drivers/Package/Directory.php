@@ -16,9 +16,7 @@
         {
             arsort($Files);
 
-            F::Run('Entity', 'Delete', [
-                'Entity' => 'Package'
-            ]);
+            F::Run('Entity', 'Delete', ['Entity' => 'Package']);
 
             foreach ($Files as $IX => $File)
             {
@@ -31,16 +29,18 @@
                     $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
 
                     $Packages[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
+
+
                 }
                 else
                 {
                     if (unlink (Root.'/Data/Package/'.$File))
-                        F::Log($File.' removed', LOG_INFO);
+                        $Call['Output']['Content'][] = $File.' removed'.PHP_EOL;
                     else
-                        F::Log($File.' not removed', LOG_ERR);
+                        $Call['Output']['Content'][] = $File.' not removed'.PHP_EOL;
                 }
 
-                F::Log($File.' processed', LOG_INFO);
+                $Call['Output']['Content'][] =  $File.' processed'.PHP_EOL;
             }
 
             F::Run('Entity', 'Create',
@@ -49,20 +49,10 @@
                     'Data' => $Data
                 ]);
 
-            $Call['Output']['Content'][] =
-                [
-                    'Type' => 'Block',
-                    'Class' => 'alert alert-success',
-                    'Value' => '<l>Package.Directory:Packages.Updated</l>'
-                ];
+            $Call['Output']['Content'][] = '<l>Package.Directory:Packages.Updated</l>'.PHP_EOL;
         }
         else
-            $Call['Output']['Content'][] =
-                [
-                    'Type' => 'Block',
-                    'Class' => 'alert alert-warning',
-                    'Value' => '<l>Package.Directory:Packages.No</l>'
-                ];
+            $Call['Output']['Content'][] = '<l>Package.Directory:Packages.No</l>'.PHP_EOL;
 
 
         return $Call;
