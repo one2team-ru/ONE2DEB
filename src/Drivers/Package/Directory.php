@@ -22,33 +22,35 @@
             {
                 $Meta = F::Run('Package.Meta', 'Read', ['Data' => ['File' => $File]]);
 
-                if (!isset($Packages[$Meta['Package']][$Meta['Architecture']])
-                    or strnatcmp($Packages[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
+                if (isset($Versions[$Meta['Package']][$Meta['Architecture']]))
                 {
-                    $Data[$IX]['File'] = $File;
-                    $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
-                    $Packages[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
-                }
-                else
-                {
-                    if (unlink (Root.'/Data/Package/'.$File))
+                    if(strnatcmp($Versions[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
                     {
-                        $Call['Output']['Content'][] = [
-                            'Type' => 'Block',
-                            'Value' => $File.' removed'
-                        ];
+                        $Data[$IX]['File'] = $File;
+                        $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
+                        $Versions[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
                     }
                     else
-                        $Call['Output']['Content'][] = [
-                            'Type' => 'Block',
-                            'Value' => $File.' not removed'
-                        ];
-                }
+                    {
+                        if (unlink (Root.'/Data/Package/'.$File))
+                        {
+                            $Call['Output']['Content'][] = [
+                                'Type' => 'Block',
+                                'Value' => $File.' removed'
+                            ];
+                        }
+                        else
+                            $Call['Output']['Content'][] = [
+                                'Type' => 'Block',
+                                'Value' => $File.' not removed'
+                            ];
+                    }
 
-                $Call['Output']['Content'][] = [
-                            'Type' => 'Block',
-                            'Value' => $File.' processed'
-                        ];
+                    $Call['Output']['Content'][] = [
+                                'Type' => 'Block',
+                                'Value' => $File.' processed'
+                            ];
+                }
             }
 
             F::Run('Entity', 'Create',
