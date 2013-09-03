@@ -48,9 +48,11 @@
                 "Entity": "Package",
                 "Custom Templates":
                 {
-                    "List": "Section"
+                    "List": "Section",
+                    "Table": "SectionTable"
                 },
                 "Section": "$1",
+                "Template": "Section",
                 "Where":
                 {
                     "Meta.X-Private": "No",
@@ -73,9 +75,11 @@
                 "Entity": "Package",
                 "Custom Templates":
                 {
-                    "List": "Section"
+                    "List": "Section",
+                    "Table": "SectionTable"
                 },
                 "Page": "$2",
+                "Template": "Section",
                 "Where":
                 {
                     "Meta.X-Private": "No",

@@ -7,13 +7,14 @@
 <description><k>Meta.Description</k></description>
 
 <h2 class="page-header"><k>Meta.Package</k> (<k>Meta.Version</k>)</h2>
-<div class="row-fluid">
-    <div class="span9">
-        <div class="block">
-            <p><k>Meta.Description</k></p>
-        </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="block">
+                <p><k>Meta.Description</k></p>
+            </div>
 
-<h4><l>Package.Entity:Install</l></h4>
+            <h4><l>Package.Entity:Install</l></h4>
 <pre class="console">
 # apt-get install <k>Meta.Package</k>
 </pre>
@@ -27,91 +28,92 @@
 wget <call>Host</call>/download/<k>File</k>
 # dpkg -i <k>Name</k>
 </pre>
-
-    <a class="spaced btn btn-large btn-success" href="/download/<urlencode><k>File</k></urlencode>"><l>Package.Entity:Download</l> <k>Name</k></a>
-
-    </div>
-
-    <div class="span3">
-        <div class="pull-right">
-            <span class="label label-info"><k>Meta.Architecture</k></span>
+            <hr/>
+            <a class="btn btn-lg btn-success" href="/download/<urlencode><k>File</k></urlencode>"><l>Package.Entity:Download</l> <k>Name</k></a>
         </div>
 
-        <if value="<k>Meta.Essential</k>" eq="yes">
-            <div class="alert alert-danger">
-                <l>Package.Entity:Meta.Essential.Yes</l>
+        <div class="col-md-3">
+            <div class="pull-right">
+                <span class="label label-info"><k>Meta.Architecture</k></span>
             </div>
-        </if>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Source</l></h4>
-            <k>Meta.Source</k>
-        </block>
+            <if value="<k>Meta.Essential</k>" eq="yes">
+                <div class="alert alert-danger">
+                    <l>Package.Entity:Meta.Essential.Yes</l>
+                </div>
+            </if>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Maintainer</l></h4>
-            <k>Meta.Maintainer</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Source</l></h4>
+                <k>Meta.Source</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Conflicts</l></h4>
-            <k>Meta.Conflicts</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Maintainer</l></h4>
+                <k>Meta.Maintainer</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Depends</l></h4>
-            <k>Meta.Depends</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Conflicts</l></h4>
+                <k>Meta.Conflicts</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Pre-Depends</l></h4>
-            <k>Meta.Pre-Depends</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Depends</l></h4>
+                <k>Meta.Depends</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Recommends</l></h4>
-            <k>Meta.Recommends</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Pre-Depends</l></h4>
+                <k>Meta.Pre-Depends</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Suggests</l></h4>
-            <k>Meta.Suggests</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Recommends</l></h4>
+                <k>Meta.Recommends</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Breaks</l></h4>
-            <k>Meta.Breaks</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Suggests</l></h4>
+                <k>Meta.Suggests</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Provides</l></h4>
-            <k>Meta.Provides</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Breaks</l></h4>
+                <k>Meta.Breaks</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Replaces</l></h4>
-            <k>Meta.Replaces</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Provides</l></h4>
+                <k>Meta.Provides</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Enhances</l></h4>
-            <k>Meta.Enhances</k>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Replaces</l></h4>
+                <k>Meta.Replaces</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Section</l></h4>
-            <a href="/packages/section/<k>Meta.Section</k>"><l>Package.Entity:Meta.Sections.<k>Meta.Section</k></l></a>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Enhances</l></h4>
+                <k>Meta.Enhances</k>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Priority</l></h4>
-            <l>Package.Entity:Meta.Priorities.<k>Meta.Priority</k></l>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Section</l></h4>
+                <a href="/packages/section/<k>Meta.Section</k>"><l>Package.Entity:Meta.Sections.<k>Meta.Section</k></l></a>
+            </block>
 
-        <block>
-            <h4><l>Package.Entity:Meta.Homepage</l></h4>
-            <a href="<k>Meta.Homepage</k>"><k>Meta.Homepage</k></a>
-        </block>
+            <block>
+                <h4><l>Package.Entity:Meta.Priority</l></h4>
+                <l>Package.Entity:Meta.Priorities.<k>Meta.Priority</k></l>
+            </block>
 
+            <block>
+                <h4><l>Package.Entity:Meta.Homepage</l></h4>
+                <a href="<k>Meta.Homepage</k>"><k>Meta.Homepage</k></a>
+            </block>
+
+        </div>
     </div>
+
 </div>
