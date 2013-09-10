@@ -14,6 +14,8 @@
 
         if (!empty($Files[0]))
         {
+            $Data = [];
+
             arsort($Files);
 
             F::Run('Entity', 'Delete', ['Entity' => 'Package']);
@@ -28,6 +30,12 @@
                 if (strnatcmp($Versions[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
                 {
                     $Data[$IX]['File'] = $File;
+
+                    if (isset($Meta['X-Private']))
+                        $Data[$IX]['X-Private'] = $Meta['X-Private'];
+                    else
+                        $Data[$IX]['X-Private'] = 'No';
+
                     $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
                     $Versions[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
                 }

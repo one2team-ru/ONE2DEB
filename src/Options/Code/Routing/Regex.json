@@ -13,7 +13,7 @@
                 "Key": "Meta.Section",
                 "Where":
                 {
-                    "Meta.X-Private": "No"
+                    "X-Private": "No"
                 }
             }
         },
@@ -29,7 +29,7 @@
                 "Page": "$1",
                 "Where":
                 {
-                    "Meta.X-Private": "No"
+                    "X-Private": "No"
                 },
                 "Sort":
                 {
@@ -55,7 +55,7 @@
                 "Template": "Section",
                 "Where":
                 {
-                    "Meta.X-Private": "No",
+                    "X-Private": "No",
                     "Meta.Section": "$1"
                 },
                 "Sort":
@@ -82,7 +82,7 @@
                 "Template": "Section",
                 "Where":
                 {
-                    "Meta.X-Private": "No",
+                    "X-Private": "No",
                     "Meta.Section": "$1"
                 },
                 "Sort":
@@ -102,7 +102,7 @@
                 "Where": {
                     "Meta.Package": "$1",
                     "Meta.Architecture": "$2",
-                    "Meta.X-Private": "No"
+                    "X-Private": "No"
                 }
             }
         },
@@ -136,7 +136,7 @@
                 "Where":
                 {
                     "File": "$1",
-                    "Meta.X-Private": "No"
+                    "X-Private": "No"
                 }
             }
         },

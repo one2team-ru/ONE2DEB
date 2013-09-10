@@ -14,7 +14,7 @@
                 }
             }
         },
-         "/binary/Release":
+        "/binary/Release":
         {
             "Service": "Package.Release",
             "Method": "Do",
@@ -36,7 +36,7 @@
                 "Entity": "Package",
                 "Where":
                 {
-                    "Meta.X-Private": "No"
+                    "X-Private": "No"
                 },
                 "Sort":
                 {

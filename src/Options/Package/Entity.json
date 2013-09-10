@@ -56,6 +56,10 @@
                 }
             }
         },
+        "X-Private":
+        {
+            "Type": "Literal.String"
+        },
         "Modified":
         {
 
