@@ -33,6 +33,7 @@
                 }
             }
         },
+        "Meta.Package": {},
         "Meta":
         {
             "Hooks":
