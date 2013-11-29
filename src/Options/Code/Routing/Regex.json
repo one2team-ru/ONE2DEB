@@ -112,14 +112,17 @@
             "Match": "^/(.+)/binary/Packages$",
             "Service": "Package.List",
             "Method": "Generate",
+            "View":
+           {
+               "Renderer":
+               {
+                   "Service": "View.Plaintext",
+                   "Method": "Render"
+               }
+           },
             "Call":
             {
-                "Key": "$1",
-                "Renderer":
-                {
-                    "Service": "View.Plaintext",
-                    "Method": "Render"
-                }
+                "Key": "$1"
             }
         },
         "Download":
@@ -127,13 +130,16 @@
             "Match": "/download/(.+)",
             "Service": "Package.Download",
             "Method": "Do",
+            "View":
+           {
+               "Renderer":
+               {
+                   "Service": "View.File",
+                   "Method": "Render"
+               }
+           },
             "Call":
             {
-                "Renderer":
-                {
-                    "Service": "View.File",
-                    "Method": "Render"
-                },
                 "Where":
                 {
                     "File": "$1",
@@ -147,13 +153,16 @@
             "Weight": 50,
             "Service": "Package.Download",
             "Method": "Do",
+            "View":
+           {
+               "Renderer":
+               {
+                   "Service": "View.File",
+                   "Method": "Render"
+               }
+           },
             "Call":
             {
-                "Renderer":
-                {
-                    "Service": "View.File",
-                    "Method": "Render"
-                },
                 "Where":
                 {
                     "File": "$2"

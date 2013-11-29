@@ -5,27 +5,27 @@
         {
             "Service": "Package.List",
             "Method": "Generate",
-            "Call":
-            {
-                "Renderer":
-                {
-                    "Service": "View.Plaintext",
-                    "Method": "Render"
-                }
-            }
+            "View":
+           {
+               "Renderer":
+               {
+                   "Service": "View.Plaintext",
+                   "Method": "Render"
+               }
+           }
         },
         "/binary/Release":
         {
             "Service": "Package.Release",
             "Method": "Do",
-            "Call":
-            {
-                "Renderer":
-                {
-                    "Service": "View.Plaintext",
-                    "Method": "Render"
-                }
-            }
+            "View":
+           {
+               "Renderer":
+               {
+                   "Service": "View.Plaintext",
+                   "Method": "Render"
+               }
+           }
         },
         "/packages":
         {
