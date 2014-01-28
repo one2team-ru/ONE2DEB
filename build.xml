@@ -21,7 +21,7 @@
     <property name="maintainer" value="Johnny Funt"/>
     <property name="destination-source" value="/var/www/one2deb"/>
 
-    <property name="depends" value="codeine-beta (>=7.7.9), php5-mongo" />
+    <property name="depends" value="codeine-beta (>=7.77), php5-mongo" />
 
     <target name="phase1" depends="properties, folders"></target>
 
