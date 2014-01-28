@@ -19,7 +19,7 @@ QUESTIONS AND FEEDBACK
 ----------------------
 
 Send your questions by mail:
-mail+deb@one2team.ru
+mail+deb@trickyplan.ru
 
 LICENSE
 -------

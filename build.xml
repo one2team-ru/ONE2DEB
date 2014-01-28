@@ -17,7 +17,7 @@
     <import file="build/tarball.xml"/>
 
     <property name="description" value="Репозиторий Debian"/>
-    <property name="homepage" value="http://one2team.ru/project/ONE2DEB"/>
+    <property name="homepage" value="http://trickyplan.ru/project/ONE2DEB"/>
     <property name="maintainer" value="Johnny Funt"/>
     <property name="destination-source" value="/var/www/one2deb"/>
 
