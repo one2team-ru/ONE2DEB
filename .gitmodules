@@ -1,0 +1,3 @@
+[submodule "build"]
+	path = build
+	url = git@src.trickyplan.ru:public/build.git
