@@ -4,3 +4,4 @@ apt-get update > /dev/null
 apt-get install codeine-beta trickydeb --yes --force-yes
 service php5-fpm reload
 service nginx reload
+service incron reload

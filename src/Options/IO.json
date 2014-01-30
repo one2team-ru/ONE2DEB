@@ -4,17 +4,13 @@
         "Primary":
         {
             "Driver":"IO.Storage.Mongo",
-            "Server": "localhost",
+            "Server": "/tmp/mongodb-27017.sock",
             "Database":"trickydeb"
         },
         "File":
         {
             "Driver": "IO.Storage.Directory",
             "Directory": "Data"
-        },
-        "Developer":
-        {
-            "Driver": "IO.Log.Syslog"
         }
     }
 }
