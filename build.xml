@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="one2deb" default="final" basedir=".">
+<project name="trickydeb" default="final" basedir=".">
 
     <import file="build/initialize.xml"/>
     <import file="build/phplint.xml"/>
@@ -17,9 +17,9 @@
     <import file="build/tarball.xml"/>
 
     <property name="description" value="Репозиторий Debian"/>
-    <property name="homepage" value="http://trickyplan.ru/project/ONE2DEB"/>
+    <property name="homepage" value="http://trickyplan.ru/project/tricky-deb"/>
     <property name="maintainer" value="Johnny Funt"/>
-    <property name="destination-source" value="/var/www/one2deb"/>
+    <property name="destination-source" value="/var/www/trickydeb"/>
 
     <property name="depends" value="codeine-beta (>=7.77), php5-mongo" />
 

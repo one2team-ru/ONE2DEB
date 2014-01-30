@@ -5,7 +5,7 @@
         {
             "Driver":"IO.Storage.Mongo",
             "Server": "localhost",
-            "Database":"Debian"
+            "Database":"trickydeb"
         },
         "File":
         {

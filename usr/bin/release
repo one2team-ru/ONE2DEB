@@ -1,6 +1,6 @@
 #!/bin/bash
 
 apt-get update > /dev/null
-apt-get install codeine-beta one2deb --yes --force-yes
+apt-get install codeine-beta trickydeb --yes --force-yes
 service php5-fpm reload
 service nginx reload

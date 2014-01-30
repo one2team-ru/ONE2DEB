@@ -2,7 +2,7 @@ Welcome to the LeasingPad Release!
 
 RELEASE INFORMATION
 ---------------
-ONE2DEB
+trickydeb
 Released on Aug 30, 2012.
 
 SYSTEM REQUIREMENTS
