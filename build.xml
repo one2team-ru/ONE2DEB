@@ -21,7 +21,7 @@
     <property name="maintainer" value="Johnny Funt"/>
     <property name="destination-source" value="/var/www/trickydeb"/>
 
-    <property name="depends" value="codeine-beta (>=7.77), php5-mongo" />
+    <property name="depends" value="codeine-beta (>=7.77), php5-mongo, incron" />
 
     <target name="phase1" depends="properties, folders"></target>
 
