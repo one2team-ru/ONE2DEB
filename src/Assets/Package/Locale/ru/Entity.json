@@ -43,7 +43,13 @@
             "vcs": "Системы управления версиями",
             "main\/web": "Веб",
             "contrib\/utils": "Несвободные утилиты",
-            "Web": "Web"
+            "Web": "Web",
+            "non-free\/x11": "X11",
+            "non-free\/kernel": "Ядро",
+            "fonts": "Шрифты",
+            "metapackages": "Метапакеты",
+            "non-free\/libs": "Библиотеки",
+            "contrib\/misc": "Разное"
         },
         "Priority": "Приоритет",
         "Priorities": {

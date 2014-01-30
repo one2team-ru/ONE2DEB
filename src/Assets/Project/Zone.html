@@ -1,20 +1,17 @@
 <subtitle><call>Project.Title</call></subtitle>
 <breadcrumb href="/"><call>Project.Title</call></breadcrumb>
 <css>Project</css>
-<link href='http://fonts.googleapis.com/css?family=Roboto:500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-
-<div id="wrap">
-    <div class="container">
-        <nav class="navbar navbar-inverse" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                  <span class="sr-only">Навигация</span>
-                </button>
-                <a class="navbar-brand" href="/">
-                    <call>HTTP.Host</call>
-                </a>
-            </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+<div class="container content">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Навигация</span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <call>HTTP.Host</call>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="navbar-nav nav">
                     <li>
                         <a href="/packages"><l>Package.Entity:Packages</l>
@@ -34,18 +31,16 @@
                         <a href="/sections">Секции</a>
                     </li>
                 </ul>
-            </div>
-            <div class="clearfix"></div>
-        </nav>
-        <div class="content">
-            <breadcrumbs/>
-            <place>Content</place>
         </div>
+    </nav>
+    <breadcrumbs/>
+    <div class="container">
+        <place>Content</place>
+        <div class="spacer"></div>
     </div>
-</div>
-<div class="container">
     <div class="footer">
         <div><call>HTTP.Host</call></div>
         <div>Работает на <a href="http://trickyplan.ru/project/tricky-deb"><call>Project.Title</call></a> (<a href="http://codeine-framework.ru">Codeine</a>).</div>
     </div>
 </div>
+
