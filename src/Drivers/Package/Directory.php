@@ -10,73 +10,84 @@
 
     setFn('Do', function ($Call)
     {
-        $Files = explode(PHP_EOL, trim(shell_exec('ls '.Root.'/Data/Package')));
+        $LockFile = Root.'/Data/Package/lock';
 
-        if (!empty($Files[0]))
+        if (file_exists($LockFile))
+            ;
+        else
         {
-            $Data = [];
+            touch($LockFile);
 
-            arsort($Files);
+            $Files = explode(PHP_EOL, trim(shell_exec('ls '.Root.'/Data/Package')));
 
-            F::Run('Entity', 'Delete', ['Entity' => 'Package']);
-
-            foreach ($Files as $IX => $File)
+            if (!empty($Files[0]))
             {
-                $Meta = F::Run('Package.Meta', 'Read', ['Data' => ['File' => $File]]);
+                $Data = [];
 
-                if (!isset($Versions[$Meta['Package']][$Meta['Architecture']]))
-                    $Versions[$Meta['Package']][$Meta['Architecture']] = 0;
+                arsort($Files);
 
-                if (strnatcmp($Versions[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
+                F::Run('Entity', 'Delete', ['Entity' => 'Package']);
+
+                foreach ($Files as $IX => $File)
                 {
-                    $Data[$IX]['File'] = $File;
+                    $Meta = F::Run('Package.Meta', 'Read', ['Data' => ['File' => $File]]);
 
-                    if (isset($Meta['X-Private']))
-                        $Data[$IX]['X-Private'] = $Meta['X-Private'];
-                    else
-                        $Data[$IX]['X-Private'] = 'No';
+                    if (!isset($Versions[$Meta['Package']][$Meta['Architecture']]))
+                        $Versions[$Meta['Package']][$Meta['Architecture']] = 0;
 
-                    $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
-                    $Versions[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
-                }
-                else
-                {
-                    if (unlink (Root.'/Data/Package/'.$File))
+                    if (strnatcmp($Versions[$Meta['Package']][$Meta['Architecture']], $Meta['Version'])<0)
                     {
-                        $Call['Output']['Content'][] = [
-                            'Type' => 'Block',
-                            'Value' => $File.' removed, because '.$Versions[$Meta['Package']][$Meta['Architecture']].' > '.$Meta['Version']
-                        ];
+                        $Data[$IX]['File'] = $File;
+
+                        if (isset($Meta['X-Private']))
+                            $Data[$IX]['X-Private'] = $Meta['X-Private'];
+                        else
+                            $Data[$IX]['X-Private'] = 'No';
+
+                        $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
+                        $Versions[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
                     }
                     else
-                        $Call['Output']['Content'][] = [
-                            'Type' => 'Block',
-                            'Value' => $File.' not removed'
-                        ];
+                    {
+                        if (unlink (Root.'/Data/Package/'.$File))
+                        {
+                            $Call['Output']['Content'][] = [
+                                'Type' => 'Block',
+                                'Value' => $File.' removed, because '.$Versions[$Meta['Package']][$Meta['Architecture']].' > '.$Meta['Version']
+                            ];
+                        }
+                        else
+                            $Call['Output']['Content'][] = [
+                                'Type' => 'Block',
+                                'Value' => $File.' not removed'
+                            ];
+                    }
+
+                    $Call['Output']['Content'][] = [
+                                'Type' => 'Block',
+                                'Value' => $File.' processed'
+                            ];
                 }
 
+                F::Run('Entity', 'Create',
+                    [
+                        'Entity' => 'Package',
+                        'Data' => $Data
+                    ]);
+
                 $Call['Output']['Content'][] = [
-                            'Type' => 'Block',
-                            'Value' => $File.' processed'
-                        ];
+                    'Type' => 'Block',
+                    'Value' => '<l>Package.Directory:Packages.Updated</l>'
+                ];
             }
+            else
+                $Call['Output']['Content'][] = [
+                    'Type' => 'Block',
+                    'Value' => '<l>Package.Directory:Packages.No</l>'
+                ];
 
-            F::Run('Entity', 'Create',
-                [
-                    'Entity' => 'Package',
-                    'Data' => $Data
-                ]);
-
-            $Call['Output']['Content'][] = [
-                'Type' => 'Block',
-                'Value' => '<l>Package.Directory:Packages.Updated</l>'
-            ];
+            unlink($LockFile);
         }
-        else
-            $Call['Output']['Content'][] = [
-                'Type' => 'Block',
-                'Value' => '<l>Package.Directory:Packages.No</l>'
-            ];
 
         return $Call;
     });
