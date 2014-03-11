@@ -23,7 +23,7 @@
         {
             touch($LockFile);
 
-            $Files = explode(PHP_EOL, trim(shell_exec('ls '.Root.'/Data/Package')));
+            $Files = explode(PHP_EOL, trim(shell_exec('ls '.Root.'/Data/Package/*.deb')));
 
             if (!empty($Files[0]))
             {
