@@ -12,9 +12,9 @@
     {
         $LockFile = Root.'/Data/Package/lock';
 
-        if (file_exists($LockFile))
-            ;
-        else
+        while(file_exists($LockFile))
+            sleep(5);
+
         {
             touch($LockFile);
 

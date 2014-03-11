@@ -1,2 +1,3 @@
-#/bin/bash
+#!/bin/sh
+
 /var/www/trickydeb/cli.php --Service=Package.Directory

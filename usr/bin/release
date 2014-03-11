@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 apt-get update > /dev/null
 apt-get install codeine-beta trickydeb --yes --force-yes
