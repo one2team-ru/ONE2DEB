@@ -14,7 +14,7 @@
 
         $IX = 0;
 
-        while(file_exists($LockFile) or $IX == 60)
+        while(file_exists($LockFile) and $IX < 12)
         {
             sleep(1);
             $IX++;
@@ -49,12 +49,12 @@
                         else
                             $Data[$IX]['X-Private'] = 'No';
 
-                        $Data[$IX]['Modified'] = filemtime(Root.'/Data/Package/'.$File);
+                        $Data[$IX]['Modified'] = filemtime($File);
                         $Versions[$Meta['Package']][$Meta['Architecture']] = $Meta['Version'];
                     }
                     else
                     {
-                        if (unlink (Root.'/Data/Package/'.$File))
+                        if (unlink ($File))
                         {
                             $Call['Output']['Content'][] = [
                                 'Type' => 'Block',

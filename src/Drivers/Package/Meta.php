@@ -11,7 +11,7 @@
     {
         exec('dpkg --info '.(isset($Call['Data']['File']['tmp_name'])?
             $Call['Data']['File']['tmp_name']:
-            Root.'/Data/Package/'.$Call['Data']['File']).' control', $Meta, $Return);
+            $Call['Data']['File']).' control', $Meta, $Return);
 
         $NewMeta = [];
         if ($Return == 0)
