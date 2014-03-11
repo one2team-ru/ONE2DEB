@@ -12,8 +12,13 @@
     {
         $LockFile = Root.'/Data/Package/lock';
 
-        while(file_exists($LockFile))
-            sleep(5);
+        $IX = 0;
+
+        while(file_exists($LockFile) or $IX == 60)
+        {
+            sleep(1);
+            $IX++;
+        }
 
         {
             touch($LockFile);
