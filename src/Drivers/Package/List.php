@@ -22,21 +22,23 @@
 
             if (!empty($Element['Meta']['Package']))
             {
+                $URL = $Element['Meta']['Package'].'_'.$Element['Meta']['Version'].'_'.$Element['Meta']['Architecture'].'.deb';
+
                 $Package = 'Package: '.$Element['Meta']['Package'].PHP_EOL;
                 unset($Element['Meta']['Package']);
 
                 $Description = $Element['Meta']['Description'];
                 unset($Element['Meta']['Description']);
 
-                $Element['Meta']['Size'] = filesize(Root.'/Data/Package/'.$Element['File']);
-                $Element['Meta']['MD5'] = md5_file(Root.'/Data/Package/'.$Element['File']);
-                $Element['Meta']['SHA1'] = sha1_file(Root.'/Data/Package/'.$Element['File']);
+                $Element['Meta']['Size'] = filesize($Element['File']);
+                $Element['Meta']['MD5'] = md5_file($Element['File']);
+                $Element['Meta']['SHA1'] = sha1_file($Element['File']);
 
                 foreach ($Element['Meta'] as $Key => $Value)
                     if (!empty($Value))
                         $Package.= $Key.': '.$Value.PHP_EOL;
 
-                $Package.= 'Filename: download/'.$Element['File'].PHP_EOL;
+                $Package.= 'Filename: download/'.$URL.PHP_EOL;
 
                 $Block.= htmlspecialchars_decode($Package.'Description: '.$Description.PHP_EOL).PHP_EOL;
 

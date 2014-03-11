@@ -127,7 +127,7 @@
         },
         "Download":
         {
-            "Match": "/download/(.+)",
+            "Match": "/download/(.+)_(.+)_(.+).deb",
             "Service": "Package.Download",
             "Method": "Do",
             "View":
@@ -142,14 +142,16 @@
             {
                 "Where":
                 {
-                    "File": "$1",
+                    "Package": "$1",
+                    "Meta.Version": "$2",
+                    "Meta.Architecture": "$3",
                     "X-Private": "No"
                 }
             }
         },
         "Download private":
         {
-            "Match": "^/(.+)/download/(.+)$",
+            "Match": "^/(.+)/download/(.+)_(.+)_(.+).deb$",
             "Weight": 50,
             "Service": "Package.Download",
             "Method": "Do",
@@ -165,7 +167,9 @@
             {
                 "Where":
                 {
-                    "File": "$2"
+                    "Package": "$2",
+                    "Meta.Version": "$3",
+                    "Meta.Architecture": "$4"
                 },
                 "Key": "$1"
             }

@@ -17,9 +17,7 @@
                     ]);
 
         if ($Call['Data']['Meta']['X-Private'] == 'No' || $Call['Key'] == $Call['Data']['Meta']['X-Private'])
-        {
-            header('X-Accel-Redirect: /Package/'.$Call['Data']['File']);
-        }
+            $Call['Output']['Content'] = $Call['Data']['File'];
 
         return $Call;
     });
