@@ -142,7 +142,7 @@
             {
                 "Where":
                 {
-                    "Package": "$1",
+                    "Meta.Package": "$1",
                     "Meta.Version": "$2",
                     "Meta.Architecture": "$3",
                     "X-Private": "No"
@@ -167,7 +167,7 @@
             {
                 "Where":
                 {
-                    "Package": "$2",
+                    "Meta.Package": "$2",
                     "Meta.Version": "$3",
                     "Meta.Architecture": "$4"
                 },
