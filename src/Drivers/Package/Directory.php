@@ -10,7 +10,7 @@
 
     setFn('Do', function ($Call)
     {
-        $LockFile = Root.'/Data/Package/lock';
+        $LockFile = Root.'/locks/repo';
 
         $IX = 0;
 
