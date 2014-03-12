@@ -14,7 +14,7 @@
 
         $IX = 0;
 
-        while(file_exists($LockFile) and $IX < 12)
+        while(file_exists($LockFile) and $IX < 60)
         {
             sleep(1);
             $IX++;
