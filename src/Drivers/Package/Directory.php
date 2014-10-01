@@ -21,7 +21,7 @@
         }
 
         {
-            touch($LockFile);
+            file_put_contents($LockFile, time());
 
             $Files = explode(PHP_EOL, trim(shell_exec('ls '.Root.'/Data/Package/*.deb')));
 
